@@ -76,6 +76,7 @@ body {
     background-image: url('./bg.jpg');
     padding: 10px;
 }
+
 .main::-webkit-scrollbar {
     display: none;
 }
@@ -106,49 +107,118 @@ body {
     &__send-img {
         padding-right: 20px;
     }
-    
-    button{
+
+    button {
         background: transparent;
         border: none;
     }
 }
 
 .AlexmessageBox,
-.EvgeniymessageBox{
+.EvgeniymessageBox {
     margin-bottom: 10px;
     padding: 10px;
     max-width: 260px;
     width: 100%;
 }
-.Alex{
+
+.Alex {
     color: #000;
-    
-    .AlexmessageBox{
+
+    .AlexmessageBox {
         text-align: left;
         background-color: #C4BFFF;
         border-radius: 10px 10px 10px 0px;
     }
-    .EvgeniymessageBox{
+
+    .EvgeniymessageBox {
         margin-left: 118px;
         text-align: right;
         background-color: #D0DCFF;
         border-radius: 10px 10px 0px 10px;
     }
 }
-.Evgeniy{
+
+.Evgeniy {
     color: #000;
-    
-    .AlexmessageBox{
+
+    .AlexmessageBox {
         margin-left: 118px;
         text-align: left;
         background-color: #D0DCFF;
         border-radius: 10px 10px 10px 0px;
-        
+
     }
-    .EvgeniymessageBox{
+
+    .EvgeniymessageBox {
         text-align: right;
         background-color: #C4BFFF;
         border-radius: 10px 10px 0px 10px;
+
+    }
+}
+
+.modal__wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    backdrop-filter: blur(4px);
+    background: #91abff43;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.close__modal {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.modal {
+    z-index: 99;
+    border-radius: 12px;
+    background: white;
+    padding: 25px;
+    max-width: 312px;
+    width: 100%;
+    
+    .content{
+        display: flex;
+        flex-direction: column;
+    }
+    &__title{
+        font-size: 24px;
+        font-family: Arial;
+        font-weight: 520;
+    }
+    &__label {
+        background: #E2EDFF;
+        margin-top: 16px;
+        padding: 6px 10px 4px 10px;
+        font-size: 12px;
         
+    }
+    #comment,
+    #url {
+        background: #E2EDFF;
+        border: none;
+        border-bottom: black 1px solid;
+        outline: none;
+        padding: 2px 0px 6px 10px;
+        font-size: 16px;
+    }
+    &__btn{
+        margin-top: 16px;
+        text-align: right;
+    }
+    
+    &__btn-cancel{
+        padding: 24px;
+        color: red;
     }
 }

@@ -3,15 +3,21 @@ import fotoImg from "../../public/foto-icon.svg";
 import sendImg from "../../public/send-icon.svg";
 import { Context } from "../context/Context";
 import Messages from "./Messages";
+import Modal from "./Modal";
 
 function Header1({ name, img, networkStatus }) {
-  const { allMessage, setAllMessage, alexText, setAlexText, handleSendMessage } = useContext(Context)
-  
+  const {
+    modalka,
+    openModal,
+    setOpenModal,
+    allMessage,
+    alexText,
+    setAlexText,
+    handleSendMessage
+  } = useContext(Context);
 
-  
   const endRef1 = useRef(null);
 
-  
   return (
     <div className="conatiner">
       <header className="header">
@@ -26,9 +32,9 @@ function Header1({ name, img, networkStatus }) {
         <Messages allMessage={allMessage} name={name} />
         <div ref={endRef1}></div>
       </main>
+
       <footer>
         <div className="footer">
-
           <input
             value={alexText}
             onChange={(e) => setAlexText(e.target.value)}
@@ -36,25 +42,36 @@ function Header1({ name, img, networkStatus }) {
             placeholder="Написать сообщение..."
             className="footer__inp-text"
           />
-          <div className="a" onClick={(e) => handleSendMessage(name, e)}>
+          <div className="a">
             {alexText ? (
-              <img src={sendImg} className="footer__send-img" alt="" />
+              <img
+                src={sendImg}
+                className="footer__send-img"
+                alt=""
+                onClick={() => handleSendMessage(name)}
+              />
             ) : (
               <>
-                <input
-                  type="file"
-                  style={{ display: "none" }}
-                  id="sendFile"
-                  onChange={(e) => setFiel(e.target.value)}
-                />
-                <label htmlFor="sendFile">
-                  <img src={fotoImg} className="footer__foto-img" alt="" />
+                <div style={{ display: "none" }} id="sendFile" />
+                <label
+                  htmlFor="sendFile"
+                  onClick={() => {
+                    console.log("bosildi"), modalka(true);
+                  }}
+                >
+                  <img
+                    src={fotoImg}
+                    className="footer__foto-img"
+                    alt=""
+                    onClick={modalka}
+                  />
                 </label>
               </>
             )}
           </div>
         </div>
       </footer>
+      {openModal && <Modal  allMessage={allMessage} name={name}/>}
     </div>
   );
 }
