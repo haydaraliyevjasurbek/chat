@@ -10,8 +10,6 @@ function Header2({ name, img, networkStatus, bgImg }) {
   const {
     modalka,
     openModal,
-    setOpenModal,
-    file,
     setFile,
     allMessage,
     evgeniyText,
