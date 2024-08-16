@@ -1,11 +1,11 @@
 import React, { useContext, useEffect, useRef } from "react";
-import fotoImg from "../../public/foto-icon.svg";
-import sendImg from "../../public/send-icon.svg";
-import { Context } from "../context/Context";
-import Messages from "./Messages";
-import Modal from "./Modal";
+import fotoImg from "@i/foto-icon.svg";
+import sendImg from "@i/send-icon.svg";
+import { Context } from "@/context/Context";
+import Messages from "@/components/Messages";
+import Modal from "@/components/Modal";
 
-function Header1({ name, img, networkStatus }) {
+function Header1({ name, img, networkStatus,  bgImg }) {
   const {
     modalka,
     openModal,
@@ -28,7 +28,7 @@ function Header1({ name, img, networkStatus }) {
         </div>
       </header>
 
-      <main className={`${name} main`}>
+      <main className={`${name} main`} style={{backgroundImage: `url(${bgImg})`}}>
         <Messages allMessage={allMessage} name={name} />
         <div ref={endRef1}></div>
       </main>

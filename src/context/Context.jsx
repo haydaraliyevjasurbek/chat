@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import Modal from "../components/Modal";
+import Modal from "@/components/Modal";
 export const Context = createContext();
 
 function ContextProvider({ children }) {

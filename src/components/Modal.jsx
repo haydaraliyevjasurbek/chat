@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Context } from "../context/Context";
+import { Context } from "@/context/Context";
 
 function Modal() {
   const { modalka, imgURL, setImgURL, coment, setComent,  alex, setAlex, evgeniy, setEvgeniy} = useContext(Context);
